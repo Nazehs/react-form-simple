@@ -1,11 +1,15 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 100vmin;
 }
 
+.copyright{
+  color: #1DA57A!important;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -19,4 +23,38 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.formWrapper{
+  height: 50vh;
+  width: 45%;
+  margin: 40px auto;
+  float: left;
+  display: inline-block;
+}
+.datepicker{
+  
+  width: 100%;
+}
+.formData{
+  width: 45%;
+  /* float: left; */
+  display: inline-block;
+  margin: 40px auto;
+}
+
+.submitbtn{
+  width: 100%;
+}
+.ant-btn-primary:hover, .ant-btn-primary[disabled]:hover{
+  color:#1DA57A;
+  background: #f5f5ff;
+}
+
+.ant-btn-primary[disabled]{
+  background:#09d3ac;
+  color: #f5f5ff;
+}
+.ant-btn-primary{
+  background: #1DA57A;
 }
