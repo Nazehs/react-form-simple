@@ -1,21 +1,20 @@
 import React from "react";
-import WrappedHorizontalLoginForm from './formComponent'
+import { Provider } from 'react-redux'
+import { store } from './redux/redux';
+// import { FormComponent} from './formComponent'
+
+import WrappedHorizontalLoginForm from './Components/formComponent'
 import "./App.css";
 import { Layout } from "antd";
 const { Header, Content, Footer } = Layout;
 
 
-class App extends React.Component {
-  state = {
-    collapsed: false
-  };
 
-  onCollapse = collapsed => {
-    console.log(collapsed);
-    this.setState({ collapsed });
-  };
+class App extends React.Component {
+  
   render() {
     return (
+      <Provider store={store}>
       <Layout style={{ minHeight: "100vh" }}>
         <Layout>
           <Header style={{ background: "#fff", padding: 0 }} />
@@ -32,6 +31,7 @@ class App extends React.Component {
               <p>Kindly add your data on the table using the below form</p>
               <div className="">
                <WrappedHorizontalLoginForm />                          
+               {/* <FormComponent/> */}
               </div>
              
             </div>
@@ -47,6 +47,7 @@ class App extends React.Component {
           </Footer>
         </Layout>
       </Layout>
+      </Provider>
     );
   }
 }
@@ -54,3 +55,25 @@ class App extends React.Component {
 
 
 export default App;
+
+
+// import React from 'react';
+// import { Provider } from 'react-redux';
+// import { store } from './redux';
+// import './App.css';
+// import FormComponent from './formComponent';
+// // Components
+// import TodoInput from './todoInput';
+// import TodoList from './todoList';
+
+// const App = () => (
+//   <Provider store={store}>
+//     <div className="main">
+//       <TodoInput />
+//       {/* <TodoList /> */}
+//       <FormComponent/>
+//     </div>
+//   </Provider>
+// );
+
+// export default App;
